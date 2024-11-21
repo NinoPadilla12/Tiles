@@ -1,15 +1,57 @@
 const celdas = [];
-const RETICULA = 15;
+const RETICULA = 20;
 let ancho;
 let alto;
 
 const azulejos = [];
-const NA = 11; // número de azulejos
+const numA = 11; // número de azulejos
 
 const reglas = [
   // Reglas de los bordes de cada azulejo
   {
+    UP: 0,
+    RIGHT: 0,
+    DOWN: 0,
+    LEFT: 0,
+  },
+  {
     UP: 1,
+    RIGHT: 1,
+    DOWN: 1,
+    LEFT: 0,
+  },
+  {
+    UP: 0,
+    RIGHT: 1,
+    DOWN: 1,
+    LEFT: 1,
+  },
+  {
+    UP: 1,
+    RIGHT: 1,
+    DOWN: 0,
+    LEFT: 1,
+  },
+  {
+    UP: 1,
+    RIGHT: 0,
+    DOWN: 1,
+    LEFT: 1,
+  },
+  {
+    UP: 1,
+    RIGHT: 0,
+    DOWN: 0,
+    LEFT: 1,
+  },
+  {
+    UP: 1,
+    RIGHT: 1,
+    DOWN: 0,
+    LEFT: 0,
+  },
+  {
+    UP: 0,
     RIGHT: 0,
     DOWN: 1,
     LEFT: 1,
@@ -22,62 +64,20 @@ const reglas = [
   },
   {
     UP: 1,
-    RIGHT: 0,
-    DOWN: 1,
-    LEFT: 0,
-  },
-  {
-    UP: 0,
-    RIGHT: 0,
-    DOWN: 0,
-    LEFT: 1,
-  },
-  {
-    UP: 1,
     RIGHT: 1,
     DOWN: 1,
-    LEFT: 0,
-  },
-  {
-    UP: 0,
-    RIGHT: 1,
-    DOWN: 0,
     LEFT: 1,
   },
   {
     UP: 0,
     RIGHT: 0,
-    DOWN: 1,
-    LEFT: 1,
-  },
-  {
-    UP: 0,
-    RIGHT: 1,
     DOWN: 0,
     LEFT: 0,
-  },
-  {
-    UP: 1,
-    RIGHT: 1,
-    DOWN: 1,
-    LEFT: 1,
-  },
-  {
-    UP: 0,
-    RIGHT: 1,
-    DOWN: 0,
-    LEFT: 1,
-  },
-  {
-    UP: 1,
-    RIGHT: 0,
-    DOWN: 0,
-    LEFT: 1,
   },
 ];
 
 function preload() {
-  for (let i = 0; i < NA; i++) {
+  for (let i = 0; i < numA; i++) {
     azulejos[i] = loadImage("tiles/tile" + i + ".png");
   }
 }
